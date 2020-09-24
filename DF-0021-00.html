@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>DF-0021-00</title>
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/body.css">
+    <link rel="stylesheet" href="./css/buttons.css">
+    <link rel="stylesheet" href="./css/modal.css">
+    <link rel="stylesheet" href="./css/利用申請フォーム.css">
+    <link rel="stylesheet" href="./css/attribute.css">
+    <link rel="stylesheet" href="./css/condition_tab.css">
+    <link rel="stylesheet" href="./css/input.css">
+</head>
+<style>
+    table,
+    th {
+        border: none;
+    }
+    /* condition_tab の　CSS 修正 */
+    /*　確認ボックス　色 */
+    
+    .brc_li:last-child::before,
+    li:last-child::after {
+        background: #179FAA;
+    }
+    /*入力ボックス　色 */
+    
+    .brc_li:first-child {
+        background-color: #FFFFFF;
+    }
+    /* 入力ボックス　テキスト　色 */
+    
+    a.brc_a1 {
+        color: black;
+    }
+    /* 確認ボックス　テキスト　色 */
+    
+    a.brc_a2 {
+        color: white;
+    }
+    /* 2ボックス真ん中の色 */
+    
+    .brc_li::before,
+    li::after {
+        background: #FFFFFF;
+    }
+</style>
+
+<body>
+    <div align="center">
+        <table class="header_table">
+            <col style="width:40%">
+            <col style="width:50%">
+            <tr>
+                <td rowspan="2" style="vertical-align:top; ">
+                    <label style="font-size: 1.5vw;"><b>アプリケーション利用申請内容確認</b></label>
+                </td>
+                <td class="header_td"> 会員奉仕本部 会員奉仕局 激励企画部</td>
+                <td rowspan="2">
+                    <a href=".\main.html" class="shuryo_button table_a" 　id="cancel">終了</a>
+                </td>
+            </tr>
+            <tr>
+                <td class="header_td">申請　太郎</td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <td style="text-align:center">
+            <ol class="breadcrumb ">
+                <li class="brc_li" itemprop="itemListElement">
+                    <a class="brc_a1" itemprop="item" href="#">
+                        <span itemprop="name">1.申請情報入力</span>
+                    </a>
+                    <meta itemprop="position" content="1" />
+                </li>
+                <li class="brc_li" itemprop="itemListElement">
+                    <a class="brc_a2" itemprop="item" href="#">
+                        <span itemprop="name">2.申請情報確認</span>
+                    </a>
+                    <meta itemprop="position" content="2" />
+                </li>
+            </ol>
+        </td>
+    </div>
+    <div align="center">
+        <table class="form_table">
+            <tr>
+                <th class="title">業務アプリケーション</th>
+                <td class="content">会合激励システム</td>
+            </tr>
+            <tr>
+                <th class="title">申請者</th>
+                <td class="content">申請者名前</td>
+            </tr>
+            <tr>
+                <th class="title">申請者所属機構</th>
+                <td class="content">神奈川　東海道事務局　会館運営部</td>
+            </tr>
+            <tr>
+                <th class="title">申請種別</th>
+                <td class="content">新規</td>
+            </tr>
+            <tr>
+                <th class="title">業務資格 有効期間</th>
+                <td class="content">2020/06/01 ～ 2020/12/31</td>
+            </tr>
+            <tr>
+                <th class="title">利用者</th>
+                <td class="content">利用　次郎</td>
+            </tr>
+            <tr>
+                <th class="title">利用者所属機構</th>
+                <td class="content">神奈川　東海道事務局　会館運営部　相模原中央文化会館出張所</td>
+            </tr>
+            <tr>
+                <th class="title">機構</th>
+                <td class="content">神奈川　東海道事務局　会館運営部　相模原中央文化会館出張所
+                </td>
+            </tr>
+            <tr>
+                <th class="title">資格</th>
+                <td class="content">一般ユーザー
+                </td>
+            </tr>
+            <tr>
+                <th class="title" style="vertical-align: top;">申請理由</td>
+                    <td class="content">業務から外れるため
+                    </td>
+            </tr>
+
+        </table>
+    </div>
+    <br>
+    <div>
+        <footer>
+            <td>
+                <a href=".\DF-0020-00.html" class="cancelbtn" id="cancel">戻る</a>
+            </td>
+            <td>
+                <a class="okbtn" id="kanryo">申請</a>
+            </td>
+        </footer>
+    </div>
+
+    <!-- The Modal4 -->
+    <div id="kanryoModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="dialog_modal">
+            <div class="modal-body" style="padding-top: 1vw;">
+                <p style="text-align:center; font-size: 2vw;"><b>申請NO.G201008180005<br>申請が完了しました。</b></p>
+            </div>
+            <div align="center" style="padding-top: 10vw; padding-bottom: 2vw;">
+                <a href=".\DF-0010-00.html" class="dialog_modal_closebtn" id="kanryoClose">OK</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+<!-- なぜ body の中　で書かないと　ダメ　ですか？ -->
+<script src="./js/DF-0021-00.js"></script>
+
+</html>

@@ -1,0 +1,78 @@
+.form_table {
+    background-color: #FFFFFF;
+    box-shadow: 2px 2px #d8d8d8;
+    width: 88vw;
+}
+
+td.content {
+    padding: 0.4vw;
+    padding-left: 2.3vw;
+    text-align: left;
+    font-size: 1vw;
+}
+
+th.title {
+    text-align: right;
+    font-size: 1.2vw;
+    width: 14vw;
+    padding: 0.4vw;
+}
+
+.sub_title {
+    margin: 5%;
+    font-size: 1.2vw;
+}
+
+input.check_box {
+    width: 2vw;
+    height: 1vw;
+}
+
+
+/* 結果テーブル */
+
+.result_table {
+    border: 1px solid black;
+    border-spacing: 0px;
+    border-collapse: collapse;
+    background-color: #FFFFFF;
+    width: 90%;
+    empty-cells: hide;
+    table-layout: auto;
+}
+
+.result_content {
+    font-size: 1vw;
+    text-align: center;
+    padding: 0.2vw;
+    border: 0.01vw solid black;
+    border-collapse: collapse;
+    background-color: #FFFFFF;
+}
+
+.header1 {
+    font-size: 1vw;
+    text-align: center;
+    padding: 0.2vw;
+    border: 0.01vw solid black;
+    border-collapse: collapse;
+    background-color: #E0F0FD;
+}
+
+.header2 {
+    font-size: 1vw;
+    text-align: center;
+    padding: 0.2vw;
+    border: 0.01vw solid black;
+    border-bottom: none;
+    background-color: #E0F0FD;
+}
+
+.header3 {
+    font-size: 1vw;
+    text-align: center;
+    padding: 0.2vw;
+    border: 0.01vw solid black;
+    border-top: none;
+    background-color: #E0F0FD;
+}

@@ -1,0 +1,203 @@
+.modal-open {
+  padding-right: 0px!important;
+}
+
+.modal-backdrop {
+    position: unset;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1040;
+    background-color: #000;
+}
+
+.modal-header {
+  border-bottom: none;
+}
+
+/* 利用者・機構・資格　モデル　*/
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: absolute; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 1536px; /* Full width */
+  height: 622px; /* Full height */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  overflow: auto; /* Enable scroll if needed */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #F7F7F7;
+  margin: auto;
+  padding: 30px;
+  border: 1px solid #888;
+  width: 1000px;
+  height: 490px;
+  border-radius: 6px;
+  overflow: auto; /* Enable scroll if needed */
+}
+
+/* 利用者・機構モデル の　検索テーブル */
+table.modal_mytable1{
+  border: 1px solid black;
+  border-spacing: 0px;
+  border-collapse: initial;
+  background-color:white;
+  width: 80%;
+  padding: 20px;
+}
+
+/* 検索結果テーブル */
+table.modal_mytable2{
+  border: 1px solid black;
+  border-spacing: 0px;
+  border-collapse: collapse;
+  background-color: #E0F0FD;
+  width: 80%;
+  empty-cells: hide;
+}
+
+.modal_th1 {
+  text-align: right;
+  padding: 3px;
+  }
+  
+.modal_th2 {
+  text-align: center;
+  padding: 3px;
+  border: 1px solid black;
+  border-collapse: collapse;
+  background-color:#E0F0FD;
+  font-size: 16px;
+  }
+
+.modal_head1 {
+  padding: 3px;
+  font-size: 15px
+  text-align: right;
+  background-color:#E0F0FD;
+}
+ 
+.modal_td1 {
+	padding: 10px;
+	}
+
+.modal_content {
+  text-align: center;
+  padding: 0px;
+  padding-left: 10px;
+  border: 1px solid black;
+  border-collapse: collapse;
+  background-color:white;
+  font-size: 15px;
+}
+
+.modal_content1 {
+  text-align: center;
+  padding: 0px;
+  padding-left: 10px;
+  border: 1px solid black;
+  border-collapse: collapse;
+  border-right-style: hidden;
+  background-color:white;
+  font-size: 15px;
+}
+
+.modal_check1 {
+  padding: 0px;
+  border: 1px solid black;
+  border-collapse: collapse;
+  border-left-style: hidden;
+  background-color:white;
+  }
+  
+/* 件数 */
+.kensu {
+  padding-left: 40px; 
+  font-size: 14px; 
+  float: right;
+  padding-top: 2px;
+}
+
+
+
+/* 終了ダイアログ　モデル　*/
+/* The Modal (background) */
+.dialog_modal {
+  display: none; /* Hidden by default */
+  position: absolute; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 1536px; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.dialog_modal-content {
+  background-color: #F7F7F7;
+  margin: auto;
+  padding: 10px;
+  border: 1px solid #888;
+  border-radius: 4px;
+  width:45%;
+  height:50%;
+}
+
+.dialog_modal_closebtn{
+  background-color: #214F76;
+  border: none;
+  color: white;
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  width: 100px;
+}
+
+
+.modal_select {
+	width: 250px; 
+	height: 25px; 
+	font-size: 16px;
+}
+/* ダウンロードダイアログ　モデル　*/
+/* 内容 */
+/* ダウンロード　モデル */
+.dwn_dialog	{
+ width: 90%;
+ box-shadow: 2px 2px #d8d8d8;
+ background-color: white;
+ text-align: left;
+}
+
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}

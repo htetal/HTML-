@@ -1,0 +1,74 @@
+/*　利用者モデル　の　頁 */
+
+.container {
+    width: auto;
+}
+
+
+/* 機構モデル　の　頁 */
+
+
+/* with 頁番号 */
+
+.container_kikou {
+    width: 1506px;
+}
+
+.pagination {
+    display: inline-block;
+    position: absolute;
+    padding-left: 35vw;
+    padding-bottom: 2vw;
+    width: auto;
+}
+
+.pagination a {
+    color: black;
+    float: left;
+    padding: 0vw 0.4vw;
+    text-decoration: none;
+    border: 1px solid #ddd;
+    background: white;
+    font-size: 1vw;
+}
+
+.pagination a.active {
+    background-color: #46AAFF;
+    color: white;
+    border: 1px solid #46AAFF;
+}
+
+.pagination a:hover:not(.active) {
+    background-color: #ddd;
+}
+
+.pagination a:first-child {
+    border-top-left-radius: 0.3vw;
+    border-bottom-left-radius: 0.3vw;
+}
+
+
+/* 件数があるから　最後の子供は無い　*/
+
+
+/*
+.pagination a:last-child {
+    border-top-right-radius: 0.3vw;
+    border-bottom-right-radius: 0.3vw;
+}
+*/
+
+.last_tab {
+    border-top-right-radius: 0.3vw;
+    border-bottom-right-radius: 0.3vw;
+}
+
+
+/* 件数 */
+
+.kensu {
+    padding-left: 2.1vw;
+    font-size: 1vw;
+    float: right;
+    padding-top: 0.1vw;
+}

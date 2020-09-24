@@ -1,0 +1,82 @@
+/* breadcrumbs */
+.breadcrumb {
+  list-style-type: none;
+  text-align: center;
+}
+
+.brc_li {
+  display: inline-block;
+  
+ /* chromeの場合は、sticky
+    IE の場合は、relative */
+  position: relative;
+  height: 50px;
+}
+
+.brc_li:first-child a {
+  cursor: default;
+}
+
+.brc_li:last-child a {
+  cursor: default;
+}
+
+.brc_li::before, .brc_li::after {
+  content: '';
+  position: absolute;
+  left: 4px;
+  height: 51%;
+  width: 100%;
+  border-right: 2px solid #666;
+  z-index: -2;
+}
+
+.brc_li::before {
+  top: -2px;
+  transform: skew(45deg);
+  border-top: 2px solid #666;
+}
+.brc_li::after {
+  bottom: -2px;
+  transform: skew(-45deg);
+  border-bottom: 2px solid #666;
+}
+
+/* box 1 ku lone yae size */
+a.brc_a1 {
+  display: inline-block;
+  position: relative;
+  line-height: 2.5;
+  padding: 7px 30px;
+  text-decoration: none;
+}
+
+
+
+/* 入力ボックス　の　最初　色 */
+.brc_li:first-child {
+  border-left: 2px solid #666;
+  left: -5px;
+  box-sizing: content-box;
+}
+
+/* 入力ボックス　色 */
+.brc_li:first-child::before, .brc_li:first-child::after {
+  left: 13px;
+}
+
+/* 確認ボックス　色 */
+.brc_li:last-child::before, .brc_li:last-child::after {
+}
+
+a.brc_a1:hover {
+  text-decoration: none;
+}
+
+a.brc_a2 {
+  display: inline-block;
+  position: relative;
+  line-height: 2.5;
+  padding: 7px 30px;
+  text-decoration: none;
+}

@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta content="width=device-width, initial-scale=1.0" charset="utf-8">
+    <title>DF-0020-00</title>
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/body.css">
+    <link rel="stylesheet" href="./css/condition_tab.css">
+    <link rel="stylesheet" href="./css/buttons.css">
+    <link rel="stylesheet" href="./css/modal.css">
+    <link rel="stylesheet" href="./css/利用申請フォーム.css">
+    <link rel="stylesheet" href="./css/attribute.css">
+    <link rel="stylesheet" href="./css/pagination.css">
+    <link rel="stylesheet" href="./css/calendar.css">
+    <link rel="stylesheet" href="./css/input.css">
+    <script src="./js/jquery-3.5.1.min.js"></script>
+    <!-- bootstrap.min.js は検索結果表の非表示と表示のため？-->
+    <script src="./js/bootstrap.min.js"></script>
+    <!-- date picker -->
+    <link rel="stylesheet" href="./css/jquery-ui.css">
+    <script src="./js/jquery-ui.js"></script>
+    <script src="./js/date picker.js"></script>
+
+
+</head>
+<style>
+    table,
+    th {
+        border: none;
+    }
+    
+    .a1:hover,
+    .a1:active {
+        background-color: #214F76!important;
+        color: white!important;
+        text-decoration: none!important;
+    }
+    /* condition_tab の　CSS 修正 */
+    /*　確認ボックス　色 */
+    
+    .brc_li:last-child::before,
+    .brc_li:last-child::after {
+        background: #FFFFFF;
+    }
+    /*入力ボックス　色 */
+    
+    .brc_li:first-child {
+        background-color: #179FAA;
+    }
+    /* 入力ボックス　テキスト　色 */
+    
+    a.brc_a1 {
+        color: white;
+    }
+    /* 確認ボックス　テキスト　色 */
+    
+    a.brc_a2 {
+        color: black;
+    }
+    /* 2ボックス真ん中の色 */
+    
+    .brc_li::before,
+    .brc_li::after {
+        background: #179FAA;
+    }
+    /* 利用者は数人の場合 */
+    
+    .multi_user {
+        border: 1px solid black;
+        border-collapse: collapse;
+        background-color: #FFFFFF;
+        width: 65%;
+        empty-cells: hide;
+        table-layout: auto;
+    }
+    
+    .multi_table_title {
+        border: 1px solid black;
+        border-collapse: collapse;
+        border-spacing: 0px;
+        text-align: center;
+        background-color: #E0F0FD;
+    }
+    
+    .multi_table_contant {
+        border: 1px solid black;
+        border-collapse: collapse;
+        background-color: #FFFFFF;
+        border-spacing: 0px;
+        padding-left: 5px;
+    }
+    
+    .multi_table_button {
+        border-top-style: hidden;
+        border-right-style: hidden;
+        border-bottom-style: hidden;
+        border-spacing: 0vw;
+        padding-left: 1vw;
+    }
+    /* date picker */
+    
+    ui-datepicker-calendar {
+        background: black !important;
+    }
+</style>
+
+<body style="resize: none;">
+    <div align="center">
+        <table class="header_table">
+            <col style="width:40%">
+            <col style="width:50%">
+            <tr>
+                <td rowspan="2" style="vertical-align:top;">
+                    <label style="font-size: 1.5vw;"><b>アプリケーション利用申請</b></label>
+                </td>
+                <td class="header_td"> 会員奉仕本部 会員奉仕局 激励企画部</td>
+                <td rowspan="2">
+                    <a href=".\main.html" class="shuryo_button table_a" 　id="cancel">終了</a>
+                </td>
+            </tr>
+            <tr>
+                <td class="header_td">申請　太郎</td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <ol class="breadcrumb">
+            <li class="brc_li" itemprop="itemListElement">
+                <a class="brc_a1" itemprop="item">
+                    <span itemprop="name">1.申請情報入力</span>
+                </a>
+                <meta itemprop="position" content="1" />
+            </li>
+            <li class="brc_li" itemprop="itemListElement">
+                <a class="brc_a2" itemprop="item">
+                    <span itemprop="name">2.申請情報確認</span>
+                </a>
+                <meta itemprop="position" content="2" />
+            </li>
+        </ol>
+    </div>
+    <div align="center">
+        <table class="form_table">
+            <tr>
+                <th class="title">業務アプリケーション</th>
+                <td class="content">会合激励システム</td>
+            </tr>
+            <tr>
+                <th class="title">申請者</th>
+                <td class="content">申請者名前</td>
+            </tr>
+            <tr>
+                <th class="title">申請者所属機構</th>
+                <td class="content">神奈川　東海道事務局　会館運営部</td>
+            </tr>
+            <tr>
+                <th class="title">申請種別</th>
+                <input type="hidden" autofocus="true" />
+                <td class="content">
+                    <form>
+                        <input type="radio" class="radio_class" style="width: 1vw; height: 1vw;" value="new" name="form_type" checked>
+                        <label for="new" style="font-size: 1vw; padding-right: 1.5vw;">資格登録</label>
+                        <input type="radio" class="radio_class" style="width: 1vw; height: 1vw;" value="delete" name="form_type">
+                        <label for="new" style="font-size: 1vw">資格削除</label>
+                    </form>
+                </td>
+            </tr>
+
+            <!--新規の場合-->
+            <tr class="new_form">
+                <th class="title">業務資格 有効期間</th>
+                <td class="content" style="padding-left: 2.3vw;">
+                    <input class="date_input" name="date_start" id="datepicker1" placeholder="YYYY/MM/DD" maxlength="10">&nbsp;&nbsp;〜&nbsp;&nbsp;
+                    <input class="date_input" name="date_end" id="datepicker2" placeholder="YYYY/MM/DD" maxlength="10">
+                </td>
+            </tr>
+            <tr class="new_form">
+                <th class="title">利用者</th>
+                <td class="content">
+                    <input id="user_txt" value="利用　三郎">
+                    <button id="userSelect">選択</button>
+                </td>
+            </tr>
+            <tr class="new_form">
+                <th class="title">利用者所属機構</th>
+                <td class="content" id="user_address">神奈川　東海道事務局　会館運営部　相模原中央文化会館出張所</td>
+            </tr>
+            <tr class="new_form">
+                <th class="title">機構</th>
+                <td class="content">
+                    <input disabled>
+                    <button type="button" id="kikouSelect">選択</button>
+                </td>
+            </tr>
+            <tr class="new_form">
+                <th class="title">資格</th>
+                <td class="content">
+                    <input disabled>
+                    <button type="button" id="shikakuSelect">選択</button>
+                </td>
+            </tr>
+
+            <!--削除の場合-->
+            <tr class="delete_form">
+                <th class="title" style="vertical-align: top;">利用者</th>
+                <td class="content">
+                    <table class="multi_user">
+                        <col style="width: 70%;">
+                        <col style="width: 20%;">
+                        <tr>
+                            <td class="multi_table_title">所属機構</td>
+                            <td class="multi_table_title">利用者</td>
+                            <td class="multi_table_button" style="padding-left: 0.3vw;">
+                                <button type="button" id="userSelect_del">選択</button>
+                            </td>
+                        </tr>
+                        <tr class="user_1">
+                            <td class="multi_table_contant">神奈川　東海道事務局　会館運営部　相模原中央文化会館出張所</td>
+                            <td class="multi_table_contant">利用　次郎</td>
+                            <td class="multi_table_button">
+                                <button type="button" id="userDelete_1">x</button>
+                            </td>
+                        </tr>
+                        <tr class="user_2">
+                            <td class="multi_table_contant">神奈川　東海道事務局　会館運営部　相模原中央文化会館出張所</td>
+                            <td class="multi_table_contant">利用　三郎</td>
+                            <td class="multi_table_button">
+                                <button type="button" id="userDelete_2">x</button>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr class="delete_form">
+                <th class="title">利用者所属機構</th>
+                <td class="content"></td>
+            </tr>
+            <tr class="delete_form">
+                <th class="title">資格</th>
+                <td class="content">
+                    <input disabled>
+                    <button type="button" id="shikakuSelect_del">選択</button>
+                </td>
+            </tr>
+            <tr class="delete_form">
+                <th class="title">機構</th>
+                <td class="content">
+                </td>
+            </tr>
+            <tr class="delete_form">
+                <th class="title">業務資格 有効期間</th>
+                <td class="content" id="current_date" style="float: left;">23/09/2021
+                </td>
+                <td class="content" style="float: left; padding-top: 0.3vw; padding-left: 0.5vw;">～&nbsp;&nbsp;
+                    <input class="date_input" name="date_end_del" id="datepicker3" placeholder="YYYY/MM/DD" maxlength="10">
+                    <input type="checkbox" id="form_delete" onclick="disable_end_date()" style="width: 2vw; height: 1vw;">承認後即削除
+                </td>
+            </tr>
+            <tr>
+                <th class="title" style="vertical-align: top;">申請理由</th>
+                <td class="content">
+                    <textarea name="message" rows="3" cols="40" style="overflow: auto; font-size: 1vw;"></textarea>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <br>
+    <div>
+        <footer>
+            <a href=".\DF-0000-00.html" class="cancelbtn a1" id="cancel">戻る</a>
+            <a href=".\DF-0021-00.html" class="okbtn a1" id="ok">確認</a>
+        </footer>
+    </div>
+
+    <!-- The appModal -->
+    <div id="appModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal_template" 　align="top" style="height: auto; width: 40vw; border-radius: 3vw;">
+            <div class="modal-body">
+                <div>
+                    <label style="padding-left: 0.7vw;"><b>業務アプリケーションを選択してください</b></label>
+                </div>
+                <div align="center" style="padding-top: 2vw; padding-bottom: 1vw;">
+                    <table class="modal_app_table">
+                        <tr>
+                            <th width=40% rowspan="2" style="vertical-align:top ; font-size: 1.1vw; padding-top: 0.5vw;">業務アプリケーション</th>
+                            <td style="padding: 0.5vw;">
+                                <select name="apps" id="sysname" style="width: 17vw; font-size: 1vw;"> 
+								<option value="1">会合激励システム１</option>
+								<option value="2">会合激励システム２</option>
+ 　 							</select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding-top: 1vw; padding-left: 0.5vw;">
+                                <button type="button" class="choosebtn" id="app_chose">決定</button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- The userModal -->
+    <div id="userModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal_template" align="top">
+            <div class="modal-body">
+                <label><b>利用者検索</b></label>
+                <div align="center" style="padding-top: 1vw;">
+                    <table class="modal_user">
+                        <col style="width:20%">
+                        <tr>
+                            <th class="modal_th1">
+                                法人機構名
+                            </th>
+                            <td class="modal_td1">
+                                <select name="apps" id="sysname" style="width: 11vw; height: 1.5vw; font-size: 1vw;"> 
+								<option value="1">住所１</option>
+								<option value="2">住所２</option>
+ 　 							</select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="modal_th1">利用者名</th>
+                            <td class="modal_td1">
+                                <input size="10">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <td>
+                                <button class="modal_search1" id="user_search">検索</button>
+                            </td>
+                        </tr>
+                    </table>
+                    <div style="padding-top: 1.5vw; padding-bottom: 1vw;">
+                        <div class=" user_result" style="height: 8vw;">
+                            <table class="modal_mytable2">
+                                <col style=" width:60%">
+                                <col style="width:10%">
+                                <col style="width:15%">
+                                <tr class="modal_head1">
+                                    <th class="modal_th2">法人機構名</th>
+                                    <th class="modal_th2">役職</th>
+                                    <th colspan="2" class="modal_th2">利用者名</th>
+                                </tr>
+                                <tr>
+                                    <td class="modal_content">住所１</td>
+                                    <td class="modal_content">一般</td>
+                                    <td class="modal_content1">名前1</td>
+                                    <td class="modal_check1">
+                                        <input type="checkbox" id="check1" value="1">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="modal_content">住所2</td>
+                                    <td class="modal_content">部長</td>
+                                    <td class="modal_content1">名前2</td>
+                                    <td class="modal_check1">
+                                        <input type="checkbox" id="check2" value="1">
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="user_blank" style="height: 8vw;">
+                        </div>
+                        <div class="pagination user_result" style="padding-left: 20vw; padding-top: 1vw; padding-bottom: 0vw;">
+                            <a href="#">&laquo;</a>
+                            <a href="#">&lt;</a>
+                            <a class="active" href="#">1</a>
+                            <a href="#">2</a>
+                            <a href="#">3</a>
+                            <a href="#">4</a>
+                            <a href="#">5</a>
+                            <a href="#">6</a>
+                            <a href="#">7</a>
+                            <a href="#">8</a>
+                            <a href="#">9</a>
+                            <a href="#">10</a>
+                            <a href="#">&gt;</a>
+                            <a class="last_tab" href="#">&raquo;</a>
+                            <label class="kensu">2件/2件</label>
+                        </div>
+                    </div>
+                </div>
+                <div align="left" style="padding-bottom: 2vw; padding-top: 2vw;">
+                    <button class="modal_closebtn" id="user_Close">閉じる</button>
+                    <button class="modal_chosebtn" id="choose1">選択</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- The kikouModal -->
+    <div id="kikouModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal_template" align="top">
+            <div class="modal-body">
+                <label><b>機構検索</b></label>
+                <div align="center" style="padding-top: 1vw;">
+                    <div>
+                        <table class="modal_kikou">
+                            <col style="width:20%">
+                            <col style="width:60%">
+                            <tr>
+                                <th class="modal_th1" style="text-align:center">
+                                    機構名
+                                </th>
+                                <td class="modal_td1">
+                                    <select class="modal_select" name="apps" id="sysname" style="width: 11vw; height: 1.5vw; font-size: 1vw;"> 
+							    	<option value="1">機構名1</option>
+								    <option value="2">機構名2</option>
+ 　 							</select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <td></td>
+                                <td>
+                                    <button class="modal_search1" id="kikou_search">検索</button>
+                                </td>
+                            </tr>
+                            <tr></tr>
+                        </table>
+                    </div>
+                    <div class="kikou_result" style="height: 6vw; padding-top: 1.5vw;">
+                        <table class="modal_mytable2">
+                            <col style="width:10%">
+                            <col style="width:60%">
+                            <tr class="modal_head1">
+                                <th class="modal_th2">No</th>
+                                <th colspan="2" class="modal_th2">機構</th>
+                            </tr>
+                            <tr>
+                                <td class="modal_content">1</td>
+                                <td class="modal_content1" style="text-align:left">創価学会</td>
+                                <td class="modal_check1">
+                                    <button class="modal_choose1" id="kikouSelect">選択</button>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="kikou_blank" style="height: 6vw; padding-top: 1.5vw;">
+                    </div>
+                    <div class="pagination kikou_result" style="padding-left: 20vw; padding-top: 1.6vw; padding-bottom: 0vw;">
+                        <td>
+                            <a href="#">&laquo;</a>
+                            <a href="#">&lt;</a>
+                            <a href="#" class="active">1</a>
+                            <a href="#">2</a>
+                            <a href="#">3</a>
+                            <a href="#">4</a>
+                            <a href="#">5</a>
+                            <a href="#">6</a>
+                            <a href="#">7</a>
+                            <a href="#">8</a>
+                            <a href="#">9</a>
+                            <a href="#">10</a>
+                            <a href="#">&gt;</a>
+                            <a class="last_tab" href="#">&raquo;</a>
+                        </td>
+                        <td>
+                            <label class="kensu">1件/1件</label>
+                        </td>
+                    </div>
+                </div>
+                <div align="left" style="padding-bottom: 2vw; padding-top: 3vw;">
+                    <button class="modal_closebtn" id="kikou_Close">閉じる</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- The shikakuModal -->
+    <div id="shikakuModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal_template" 　align="top">
+            <div class="modal-body">
+                <div>
+                    <label style="text-align:left; font-size: 1.5vw;"><b>業務資格検索</b><br></label>
+                    <label style="text-align:left; font-size: 1.2vw;"><b>申請種別:削除 </b></label>
+                    <label style="text-align:left; font-size: 1vw; padding:3vw;">利用　次郎 さんの削除可能な資格</label>
+                </div>
+                <div align="center" style="padding-top: 1vw;">
+                    <table class="modal_mytable2" style="width: 100%;">
+                        <col style="width:5%">
+                        <col style="width:10%">
+                        <col style="width:35%">
+                        <col style="width:35%">
+                        <tr class="modal_head1">
+                            <th class="modal_th2">No</th>
+                            <th class="modal_th2">資格名</th>
+                            <th class="modal_th2">機構名</th>
+                            <th colspan="2" class="modal_th2">有効期間</th>
+                        </tr>
+                        <tr>
+                            <td class="modal_content">1</td>
+                            <td class="modal_content">一般ユーザ</td>
+                            <td class="modal_content" style="text-align:left">神奈川　東海道事務局　会館運営部　相模原中央文化会館出張所</td>
+                            <td class="modal_content1">2020/06/01 ~ 9999/12/31</td>
+                            <td class="modal_check1">
+                                <button class="modal_choose1" id="shikakuSelect">選択</button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <footer>
+                <div class="pagination" style="padding-left: 20vw; padding-top: 1vw; padding-bottom: 0vw;">
+                    <a href="#">&laquo;</a>
+                    <a href="#">&lt;</a>
+                    <a href="#" class="active">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#">4</a>
+                    <a href="#">5</a>
+                    <a href="#">6</a>
+                    <a href="#">7</a>
+                    <a href="#">8</a>
+                    <a href="#">9</a>
+                    <a href="#">10</a>
+                    <a href="#">&gt;</a>
+                    <a class="last_tab" href="#">&raquo;</a>
+                    <label class="kensu">1件/1件</label>
+                </div>
+                <div align="left" style="padding-bottom: 2vw; padding-top: 2.5vw;">
+                    <button class="modal_closebtn" id="shikakuClose" style="top: 27.5vw;">閉じる</button>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+
+<!-- なぜ body の中　で書かないと　ダメ　ですか？ -->
+<script src="./js/DF-0020-00.js"></script>
+
+</html>

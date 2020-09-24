@@ -1,0 +1,319 @@
+.modal-open {
+    padding-right: 0vw!important;
+}
+
+.modal-backdrop {
+    position: unset;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1040;
+    background-color: #000;
+}
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 8%;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+
+/* Modal Content */
+
+.modal_template {
+    background-color: #F7F7F7;
+    margin: auto;
+    padding: 2vw;
+    border: 0.01vw solid #888;
+    width: 65vw;
+    height: auto;
+    border-radius: 1vw;
+}
+
+
+/* 業務アプリケーション選択モデル */
+
+.modal_app_table {
+    border: 0.01vw solid black;
+    border-spacing: 0vw;
+    border-collapse: separate;
+    background-color: white;
+    width: 80%;
+    padding: 1vw;
+}
+
+
+/* 利用者・機構モデル の　検索テーブル */
+
+.modal_user {
+    border: 0.01vw solid black;
+    border-spacing: 0vw;
+    border-collapse: separate;
+    background-color: white;
+    width: 80%;
+    padding: 1vw;
+    font-size: 1.1vw;
+}
+
+.modal_kikou {
+    border: 0.01vw solid black;
+    border-spacing: 0vw;
+    border-collapse: separate;
+    background-color: white;
+    width: 80%;
+    padding: 1vw;
+    font-size: 1.1vw;
+}
+
+
+/* 検索結果テーブル */
+
+table.modal_mytable2 {
+    border: 0.01vw solid black;
+    border-spacing: 0vw;
+    border-collapse: collapse;
+    background-color: #E0F0FD;
+    width: 80%;
+    empty-cells: hide;
+}
+
+.modal_th1 {
+    text-align: right;
+    padding: 0.5vw;
+}
+
+.modal_th2 {
+    text-align: center;
+    padding: 0.6vw;
+    border: 0.01vw solid black;
+    border-collapse: collapse;
+    background-color: #E0F0FD;
+    font-size: 1vw;
+}
+
+.modal_head1 {
+    padding: 3px;
+    font-size: 15px;
+    text-align: right;
+    background-color: #E0F0FD;
+}
+
+.modal_td1 {
+    padding: 0.5vw;
+    padding-left: 1vw;
+}
+
+.modal_content {
+    text-align: center;
+    padding: 0.5vw;
+    border: 0.01vw solid black;
+    border-collapse: collapse;
+    background-color: white;
+    font-size: 1vw;
+}
+
+.modal_content1 {
+    text-align: center;
+    padding: 0vw;
+    padding-left: 1vw;
+    border: 0.01vw solid black;
+    border-collapse: collapse;
+    border-right-style: hidden;
+    background-color: white;
+    font-size: 1vw;
+}
+
+.modal_check1 {
+    padding: 0vw;
+    border: 0.01vw solid black;
+    border-collapse: collapse;
+    border-left-style: hidden;
+    background-color: white;
+}
+
+
+/* 件数 */
+
+.kensu {
+    padding-left: 2vw;
+    font-size: 1vw;
+    float: right;
+}
+
+
+/* Modal Content */
+
+.dialog_modal {
+    background-color: #F7F7F7;
+    margin: auto;
+    padding: 1vw;
+    border: 0.01vw solid #888;
+    border-radius: 1vw;
+    width: 45vw;
+    height: auto;
+}
+
+.dialog_modal_closebtn {
+    background-color: #214F76;
+    border: none;
+    color: white;
+    padding: 0.7vw 3vw;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1vw;
+    cursor: pointer;
+    border-radius: 0.5vw;
+    width: auto;
+}
+
+.modal_select {
+    width: 250vw;
+    height: 25px;
+    font-size: 16px;
+}
+
+
+/* ダウンロードダイアログ　モデル　*/
+
+
+/* 内容 */
+
+
+/* ダウンロード　モデル */
+
+.dwn_dialog {
+    width: 90%;
+    box-shadow: 2px 2px #d8d8d8;
+    background-color: white;
+    text-align: left;
+}
+
+
+/* The Close"x" Button */
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 2vw;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* download dialog modal */
+
+.dwn_dialog_content {
+    background-color: #F7F7F7;
+    margin: auto;
+    padding: 1vw;
+    border: 0.01vw solid #888;
+    border-radius: 1vw;
+    width: 45vw;
+    height: auto;
+}
+
+.dwn_dialog_dwnbtn {
+    background-color: #214F76;
+    border: none;
+    color: white;
+    padding: 0.5vw 2vw;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.2vw;
+    cursor: pointer;
+    border-radius: 0.5vw;
+    width: auto;
+}
+
+
+/* 利用者・機構　モデル　検索ボタン */
+
+.modal_search1 {
+    background-color: #214F76;
+    border: none;
+    color: white;
+    padding: 0.5vw;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.1vw;
+    cursor: pointer;
+    float: right;
+    border-radius: 0.5vw;
+    width: 5vw;
+}
+
+
+/* 利用者・機構・資格　モデル　閉じるボタン */
+
+.modal_closebtn {
+    background-color: #214F76;
+    border: none;
+    color: white;
+    padding: 0.5vw;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1vw;
+    width: 6vw;
+    cursor: pointer;
+    border-radius: 0.5vw;
+    float: left;
+}
+
+
+/* 利用者・機構・資格　モデル　選択ボタン */
+
+.modal_chosebtn {
+    background-color: #214F76;
+    border: none;
+    color: white;
+    padding: 0.5vw;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1vw;
+    cursor: pointer;
+    border-radius: 0.5vw;
+    width: 6vw;
+    float: right;
+}
+
+
+/*　資格・機構　モデル　選択ボタン */
+
+.modal_choose1 {
+    background-color: #214F76;
+    padding: 0.3vw 0.8vw;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1vw;
+    cursor: pointer;
+    border-radius: 0.5vw;
+    border: none;
+}

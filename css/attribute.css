@@ -1,0 +1,14 @@
+label {
+    text-align: left;
+    font-size: 1.2vw;
+}
+
+
+/* max widthは使う所によって修正必要がある */
+
+.txt_overflow {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 20vw;
+}

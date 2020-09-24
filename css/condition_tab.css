@@ -1,0 +1,97 @@
+/* breadcrumbs */
+
+.breadcrumb {
+    list-style-type: none;
+    text-align: center;
+    margin-top: 1vw;
+    margin-bottom: 2vw;
+    line-height: 1vw;
+}
+
+.brc_li {
+    display: inline-block;
+    /* chromeの場合は、sticky
+    IE の場合は、relative */
+    position: relative;
+    height: 3vw;
+}
+
+.brc_li:first-child a {
+    cursor: default;
+}
+
+.brc_li:last-child a {
+    cursor: default;
+}
+
+.brc_li::before,
+.brc_li::after {
+    content: '';
+    position: absolute;
+    left: 0vw;
+    height: 1.51vw;
+    width: 100%;
+    border-right: 0.1vw solid #666;
+    z-index: -2;
+}
+
+.brc_li::before {
+    top: -0.1vw;
+    transform: skew(45deg);
+    border-top: 0.1vw solid #666;
+}
+
+.brc_li::after {
+    bottom: -0.1vw;
+    transform: skew(-45deg);
+    border-bottom: 0.1vw solid #666;
+}
+
+
+/* box 1 ku lone yae size */
+
+a.brc_a1 {
+    display: inline-block;
+    position: relative;
+    line-height: 2.1vw;
+    padding: 0.4vw 1.7vw;
+    text-decoration: none;
+}
+
+
+/* 入力ボックス　の　最初　色 */
+
+.brc_li:first-child {
+    border-left: 0.1vw solid #666;
+    border-top: 0.1vw solid #666;
+    border-bottom: 0.1vw solid #666;
+    left: -0.4vw;
+    box-sizing: content-box;
+}
+
+
+/* 入力ボックス　色 */
+
+.brc_li:first-child::before,
+.brc_li:first-child::after {
+    left: 4vw;
+}
+
+
+/* 確認ボックス　色 
+
+.brc_li:last-child::before,
+.brc_li:last-child::after {}
+*/
+
+a.brc_a1:hover {
+    text-decoration: none;
+}
+
+a.brc_a2 {
+    display: inline-block;
+    position: relative;
+    line-height: 2.1vw;
+    padding: 0.4vw 1.7vw;
+    text-decoration: none;
+}

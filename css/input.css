@@ -1,0 +1,14 @@
+input {
+    display: inline-block;
+    border: 1px inset black;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding-left: 5px;
+    height: 1.3vw;
+    width: 8vw;
+    font-size: 1vw;
+}
+
+.date_input {
+    text-align: center;
+}

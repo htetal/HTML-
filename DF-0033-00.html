@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>DF-0033-00</title>
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/body.css">
+    <link rel="stylesheet" href="./css/buttons.css">
+    <link rel="stylesheet" href="./css/modal.css">
+    <link rel="stylesheet" href="./css/利用申請フォーム.css">
+    <link rel="stylesheet" href="./css/attribute.css">
+    <link rel="stylesheet" href="./css/condition_tab.css">
+    <link rel="stylesheet" href="./css/input.css">
+</head>
+<style>
+    table,
+    th {
+        border: none;
+    }
+    /* condition_tab の　CSS 修正 */
+    /*　2番ボックス　色 */
+    
+    .brc_li:last-child::before,
+    li:last-child::after {
+        background: #179FAA;
+    }
+    /*1番ボックス　色 */
+    
+    .brc_li:first-child {
+        background-color: #FFFFFF;
+    }
+    /* 1番ボックス　テキスト　色 */
+    
+    a.brc_a1 {
+        color: black;
+    }
+    /* 2番ボックス　テキスト　色 */
+    
+    a.brc_a2 {
+        color: white;
+    }
+    /* 2ボックス真ん中の色 */
+    
+    .brc_li::before,
+    li::after {
+        background: #FFFFFF;
+    }
+    /* 承認状況　テーブル　*/
+    
+    .gyokyo_table {
+        border: 1px solid black;
+        border-spacing: 0px;
+        border-collapse: collapse;
+        background-color: #FFFFFF;
+        width: 90%;
+        empty-cells: hide;
+        table-layout: auto;
+    }
+    
+    .gyokyo_header {
+        font-size: 1vw;
+        text-align: center;
+        padding: 0.2vw;
+        border: 0.01vw solid black;
+        border-collapse: collapse;
+        background-color: #E0F0FD;
+    }
+    
+    .gyokyo_content_cent,
+    .gyokyo_content_lef {
+        font-size: 1vw;
+        padding: 0.2vw;
+        border: 0.01vw solid black;
+        border-collapse: collapse;
+    }
+    
+    .gyokyo_content_cent {
+        text-align: center;
+    }
+    
+    .gyokyo_content_lef {
+        text-align: left;
+        padding-left: 15px;
+    }
+    /*　印鑑スタイル */
+    
+    img {
+        width: 15vw;
+        position: absolute;
+        left: 63vw;
+        top: 19vw;
+    }
+</style>
+
+<body>
+    <div align="center" style="padding-bottom: 1vw;">
+        <table class="header_table">
+            <col style="width:40%">
+            <col style="width:50%">
+            <tr>
+                <td rowspan="2" style="vertical-align:top;">
+                    <label style="font-size: 1.5vw;"><b>アプリケーション利用申請確認</b></label>
+                </td>
+                <td class="header_td" style="text-align:right"> 会員奉仕本部 会員奉仕局 激励企画部</td>
+                <td rowspan="2">
+                    <a href=".\main.html" class="shuryo_button table_a" id="cancel">終了</a>
+                </td>
+            </tr>
+            <tr>
+                <td class="header_td" style="text-align:right">申請　太郎</td>
+            </tr>
+        </table>
+    </div>
+    <label style="font-size: 1.5vw; margin: 3%;"><b>利用承認</b></label>
+    <div>
+        <td style="text-align:center">
+            <ol class="breadcrumb">
+                <li class="brc_li" itemprop="itemListElement">
+                    <a class="brc_a1" itemprop="item" href="#">
+                        <span itemprop="name">1.申請情報確認</span>
+                    </a>
+                    <meta itemprop="position" content="1" />
+                </li>
+                <li class="brc_li" itemprop="itemListElement">
+                    <a class="brc_a2" itemprop="item" href="#">
+                        <span itemprop="name">2.承認情報確認</span>
+                    </a>
+                    <meta itemprop="position" content="2" />
+                </li>
+            </ol>
+        </td>
+    </div>
+    <img src="img/承認.png" alt="承認">
+    <div align="center" style="padding-bottom: 2vw;">
+        <table class="form_table">
+            <tr>
+                <th class="title">申請No.</th>
+                <td class="content">G201008180005</td>
+            </tr>
+            <tr>
+                <th class="title">申請日時</th>
+                <td class="content">2020/05/05 12:11</td>
+            </tr>
+            <tr>
+                <th class="title">業務アプリケーション</th>
+                <td class="content">会合激励システム</td>
+            </tr>
+            <tr>
+                <th class="title">申請者</th>
+                <td class="content">申請　太郎</td>
+            </tr>
+            <tr>
+                <th class="title">申請者所属機構</th>
+                <td class="content">神奈川　東海道事務局　会館運営部</td>
+            </tr>
+            <tr>
+                <th class="title">申請種別</th>
+                <td class="content">新規</td>
+            </tr>
+            <tr>
+                <th class="title">業務資格 有効期間</th>
+                <td class="content">2020/06/01~ 2020/12/31</td>
+            </tr>
+            <tr>
+                <th class="title">利用者</th>
+                <td class="content">利用　次郎</td>
+            </tr>
+            <tr>
+                <th class="title">利用者所属機構</td>
+                    <td class="content">神奈川　東海道事務局　会館運営部　相模原中央文化会館出張所</td>
+            </tr>
+            <tr>
+                <th class="title">機構</td>
+                    <td class="content">神奈川　東海道事務局　会館運営部　相模原中央文化会館出張所</td>
+            </tr>
+            <tr>
+                <th class="title">資格</th>
+                <td class="content">一般ユーザー</td>
+            </tr>
+            <tr>
+                <th class="title">申請理由</td>
+                    <td class="content">業務から外れるため</td>
+            </tr>
+            <tr>
+                <th class="title">承認者コメント</td>
+                    <td class="content">業務主管局局長承認します</td>
+            </tr>
+        </table>
+    </div>
+    <!-- class name ( gyokyo_form ) for hide the form with javascript -->
+    <label class="gyokyo_form sub_title"><b>承認状況</b></label>
+    <div class=" gyokyo_form" align="center">
+        <table class="gyokyo_table">
+            <col style="width:3%">
+            <col style="width:13%">
+            <col style="width:10%">
+            <col style="width:30%">
+            <col style="width:13%">
+            <tr>
+                <th class="gyokyo_header">No</th>
+                <th class="gyokyo_header">変更日時</th>
+                <th class="gyokyo_header">ステータス</th>
+                <th class="gyokyo_header">所属機構</th>
+                <th class="gyokyo_header">申請・承認者</th>
+                <th class="gyokyo_header">コメント</th>
+            </tr>
+            <tr>
+                <td class="gyokyo_content_cent">1</td>
+                <td class="gyokyo_content_cent">2020/05/06 12:11</td>
+                <td class="gyokyo_content_cent">承認</td>
+                <td class="gyokyo_content_lef">神奈川　東海道事務局</td>
+                <td class="gyokyo_content_cent">一般　太郎</td>
+                <td class="gyokyo_content_lef txt_overflow">〇〇〇〇〇〇の件、△△の為、業務主管局部長承認致します。その他、以下となります。</td>
+            </tr>
+            <tr>
+                <td class="gyokyo_content_cent">2</td>
+                <td class="gyokyo_content_cent">2020/05/07 12:11</td>
+                <td class="gyokyo_content_cent">判断依頼</td>
+                <td class="gyokyo_content_lef">会員奉仕本部　会員奉仕局　激励企画部</td>
+                <td class="gyokyo_content_cent">主管　太郎</td>
+                <td class="gyokyo_content_lef txt_overflow">判断を依頼します。</td>
+            </tr>
+        </table>
+    </div>
+    <div style="padding-bottom: 3vw;">
+        <a href=".\DF-0032-00.html" class="cancelbtn" id="cancel">戻る</a>
+        <a class="okbtn" id="kanryo">確定</a>
+    </div>
+
+    <!-- The Modal4 -->
+    <div id="kanryoModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="dialog_modal" style="width: 40vw;">
+            <div class="modal-body" style="padding-top: 1vw;">
+                <p style="text-align:center; font-size: 1.5vw;">以下の申請情報を承認しました。</p>
+                <table style="width:80%" align="center">
+                    <td style="font-size: 1.2vw;">申請No.G201008180005</td>
+                    <td style="font-size: 1.2vw;">利用者：利用　次郎
+                    </td>
+                </table>
+            </div>
+            <div align="center" style="padding-top: 8vw; padding-bottom: 2vw;">
+                <a href=".\DF-0010-00.html" class="dialog_modal_closebtn" id="kanryoClose">OK</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+<!-- なぜ body の中　で書かないと　ダメ　ですか？ -->
+<script src="./js/DF-0033-00.js"></script>
+
+</html>

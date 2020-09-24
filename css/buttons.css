@@ -1,0 +1,183 @@
+/* 一般ボタン　*/
+
+
+/* リンク一ボタン　の　ため　*/
+
+a:hover,
+a:active {
+    background-color: none;
+    /* hover effect change */
+}
+
+a {
+    font-size: 1.1vw;
+}
+
+
+/* 戻るボタン */
+
+.cancelbtn {
+    background-color: #214F76;
+    border: none;
+    color: white;
+    padding: 0.6vw 2vw;
+    text-align: center;
+    line-height: 2.2vw;
+    text-decoration: none;
+    /*  display: inline-block;  */
+    font-size: 1.2vw;
+    margin-top: 1%;
+    margin-left: 5%;
+    margin-bottom: 1%;
+    cursor: pointer;
+    border-radius: 0.5vw;
+    float: left;
+    width: 6vw;
+}
+
+
+/*　確認・承認　ボタン */
+
+.okbtn {
+    background-color: #214F76;
+    border: none;
+    color: white;
+    padding: 0.6vw 2vw;
+    text-align: center;
+    text-decoration: none;
+    /*  display: inline-block;  */
+    font-size: 1.2vw;
+    margin-top: 1%;
+    margin-right: 5%;
+    margin-bottom: 1%;
+    cursor: pointer;
+    border-radius: 0.5vw;
+    float: right;
+    width: 6vw;
+    line-height: 2.2vw;
+}
+
+
+/* 業務アプリケーション選択　決定　ボタン */
+
+.choosebtn {
+    background-color: #214F76;
+    border: none;
+    color: white;
+    padding: 0.6vw 3vw;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.1vw;
+    margin: 0.5vw 0vw;
+    cursor: pointer;
+    border-radius: 0.5vw;
+}
+
+
+/* CSVダウンロード　ボタン */
+
+.dwnbtn {
+    background-color: #214F76;
+    border: none;
+    color: white;
+    padding: 0.6vw 1vw;
+    text-align: center;
+    text-decoration: none;
+    /*  display: inline-block;  */
+    font-size: 1vw;
+    margin: 1% 1%;
+    cursor: pointer;
+    float: right;
+    /*
+    width: 110vw;
+    */
+}
+
+
+/* 新規申請　ボタン */
+
+.newbtn {
+    background-color: #214F76;
+    border: none;
+    color: white;
+    padding: 0.7vw 2vw;
+    text-align: center;
+    text-decoration: none;
+    /*  display: inline-block;  */
+    font-size: 1vw;
+    margin: 1% 5%;
+    cursor: pointer;
+    float: left;
+    border-radius: 0.3vw;
+    margin-bottom: 0vw;
+    /*
+    width: 80vw;
+    */
+}
+
+
+/* 承認画面 ボタン*/
+
+.detail {
+    background-color: #214F76;
+    border: none;
+    color: white;
+    padding: 0.3vw 0.4vw;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 0.8vw;
+    /*
+    margin: 4px 2px;
+    */
+    cursor: pointer;
+    border-radius: 0.3vw;
+}
+
+
+/* 承認一覧の検索　ボタン */
+
+.searchbtn {
+    background-color: #214F76;
+    border: none;
+    color: white;
+    padding: 0.01vw 30vw;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+
+/* 申請承認一覧　検索ボタン */
+
+.list_search_btn {
+    /*
+    width: 110vw;
+    */
+    background-color: #214F76;
+    border: none;
+    color: white;
+    padding: 0.6vw 3vw;
+    text-align: center;
+    text-decoration: none;
+    /*  display: inline-block;  */
+    font-size: 1vw;
+    margin: 1% 1%;
+    cursor: pointer;
+    float: right;
+}
+
+button {
+    border-radius: 0.3vw;
+    border: 0.01vw outset;
+    padding-top: 0.1vw;
+    padding-bottom: 0.2vw;
+    padding-left: 0.5vw;
+    padding-right: 0.5vw;
+    font-size: 1vw;
+}
